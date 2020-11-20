@@ -1,17 +1,19 @@
+
+const isCorn = (plant) => {
+    const number = plant.type === "Corn" ? plant.output * .5 : plant.output;
+    return number;
+}
+
 export const harvestPlants = (plantsArray) => {
-    let outputArray = [];
-    for (const plant of plantsArray) {
-        let number;
-        plant.type !== "Corn" ?
-            number = plant.output :
-            number = plant.output * .5;
+    const outputArray = plantsArray.flatMap(plant => new Array(isCorn(plant)).fill(plant));
+    //  anothey alternative: 
+    // const number= plant.type === "Corn" ? plant.output * .5 : plant.output;
+    // for (const plant of plantsArray) {
+    //     let newArray = new Array(number).fill(plant);
+    //     outputArray.push(...newArray);
+    // }
 
-        for (let i = 0; i < number; i++) {
-            outputArray.push(plant)
-
-        }
-
-    }
+    console.log(outputArray);
     return outputArray;
 
 }

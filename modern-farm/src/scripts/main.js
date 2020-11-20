@@ -11,6 +11,7 @@ const yearlyPlan = createPlan();
 plantSeeds(yearlyPlan);
 
 const plants = usePlants();
+console.log(plants);
 const harvestedPlants = harvestPlants(plants);
 
 
